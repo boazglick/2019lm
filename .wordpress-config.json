@@ -1,5 +1,5 @@
 {
-  "baseUrl": "spider.ussl.co.il/apec-esis",
+  "baseUrl": "spider.ussl.co.il/2019lm",
   "protocol": "https",
   "hostingWPCOM": false,
   "useACF": true,
