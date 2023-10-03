@@ -1,23 +1,23 @@
 module.exports = {
-  siteUrl: "https://apec-esis.org", // Site domain. Do not include a trailing slash!
+  siteUrl: "https://2019lm.com", // Site domain. Do not include a trailing slash!
 
   postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
-  siteTitleMeta: "apec-esis.org", // This allows an alternative site title for meta data for pages.
+  siteTitleMeta: "2019lm.com", // This allows an alternative site title for meta data for pages.
   siteDescriptionMeta:
-    "apec-esis.org", // This allows an alternative site description for meta data for pages.
+    "2019lm.com", // This allows an alternative site description for meta data for pages.
 
   shareImageWidth: 1000, // Change to the width of your default share image
   shareImageHeight: 523, // Change to the height of your default share image
 
-  shortTitle: "apec-esis.org", // Used for App manifest e.g. Mobile Home Screen
+  shortTitle: "2019lm.com", // Used for App manifest e.g. Mobile Home Screen
   siteIcon: "favicon.png", // Logo in /static dir used for SEO, RSS, and App manifest
   backgroundColor: "#e9e9e9", // Used for Offline Manifest
   themeColor: "#15171A", // Used for Offline Manifest
   apiUrl: "https://wordpress.theasdfghjkl.com",
   subscribeWidget: {
     visible: false,
-    title: "apec-esis.org",
+    title: "2019lm.com",
     helpText: "הישארו מעודכנים",
     successMessage: "תודה ההודעה נשלחה בהצלחה",
   },
@@ -25,11 +25,11 @@ module.exports = {
     navigation: [
       {
         label: "דף הבית",
-        url: "https://apec-esis.org/",
+        url: "https://2019lm.com/",
       },
       {
         label: "יצירת קשר",
-        url: "https://apec-esis.org/contact",
+        url: "https://2019lm.com/contact",
       },
     ],
   },
@@ -38,24 +38,18 @@ module.exports = {
     navigation: [
       {
         label: "דף הבית",
-        url: "https://apec-esis.org/",
+        url: "https://2019lm.com/",
       },
       {
         label: "Sitemap",
-        url: "https://apec-esis.org/sitemap.xml",
+        url: "https://2019lm.com/sitemap.xml",
       },
       
       {
         label: "יצירת קשר",
-        url: "https://apec-esis.org/contact",
+        url: "https://2019lm.com/contact",
       },
-                
-       {
-        label: "קרסו מאיה",
-        url: "https://maya.tase.co.il/company/2384",
-      },
-      
-     
+              
     ],
   },
   socialLinks: {
@@ -76,9 +70,9 @@ module.exports = {
     successMessage: "We’ll get in touch with you soon.",
   },
   metadata: {
-    title: "apec-esis.org",
+    title: "2019lm.com",
     description:
-      "apec-esis.org",
+      "2019lm.com",
   },
   twitterCard: {
     title: "",
@@ -94,9 +88,9 @@ module.exports = {
     imageUrl: "facebookImage.png",
     appId: "2391725224459953",
   },
-  siteTitle: "apec-esis.org",
+  siteTitle: "2019lm.com",
   siteDescription:
-    "apec-esis.org",
+    "2019lm.com",
   language: "he",
   logoUrl: "",
   iconUrl: "",
