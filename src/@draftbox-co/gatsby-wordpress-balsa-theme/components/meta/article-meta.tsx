@@ -14,9 +14,25 @@ import { graphql, useStaticQuery } from "gatsby";
 import url from "url";
 import _ from "lodash";
 
-// Spidernet JSON-LD in the post body that already describes the article. Older
-// posts may carry wpautop <br /> inside the block, so scan up to its </script>.
-const CONTENT_ARTICLE_LD = /<script[^>]*application\/ld\+json[^>]*>(?:(?!<\/script>)[\s\S])*?"@type"\s*:\s*"(?:Article|BlogPosting|NewsArticle)"/;
+const CONTENT_LD_BLOCK = /<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi;
+const ARTICLE_TYPE = /^(Article|BlogPosting|NewsArticle)$/;
+
+// True when the post body already has a *parseable* Article JSON-LD block.
+// A damaged block (e.g. wpautop <br /> in older posts) doesn't count, so such
+// pages keep the theme's Article instead of ending up with none.
+const hasValidContentArticle = (content: string) => {
+  const re = new RegExp(CONTENT_LD_BLOCK.source, "gi");
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(content || "")) !== null) {
+    try {
+      const types = ([] as string[]).concat(JSON.parse(m[1])["@type"] || []);
+      if (types.some((t) => ARTICLE_TYPE.test(t))) return true;
+    } catch (e) {
+      // damaged block — ignore
+    }
+  }
+  return false;
+};
 
 const capitalize = (str: string) => (str ? str.charAt(0).toUpperCase() + str.slice(1) : "");
 
@@ -99,7 +115,7 @@ const ArticleMeta: React.FC<ArticleMetaProps> = ({ data, amp, location }) => {
       ? url.resolve(config.siteUrl, config.logoUrl || config.alternateLogoUrl)
       : null;
 
-  const hasSpidernetArticle = CONTENT_ARTICLE_LD.test(data.content || "");
+  const hasSpidernetArticle = hasValidContentArticle(data.content);
 
   const jsonLd = {
     "@context": `https://schema.org/`,
